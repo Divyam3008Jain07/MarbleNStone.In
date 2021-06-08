@@ -1,0 +1,448 @@
+<html>
+
+<head>
+  <title>
+    Marble And Stone India
+  </title>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+    }
+
+    #container {
+      height: 100%;
+      width: 200px;
+      background-color: black;
+      position: fixed;
+      left: -200px;
+      transition: all 0.4s ease-in-out;
+      top: 0px;
+    }
+
+    #container ul a {
+      color: magenta;
+      font-size: 22px;
+      text-decoration: none;
+      text-align: center;
+      line-height: 130px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      text-shadow: 0px 0px 6px magenta;
+
+    }
+
+    li:hover {
+      background-color: black;
+      border: magenta 10px solid;
+      text-shadow: 0px 0px 0px magenta;
+
+
+    }
+
+    #container li {
+      transition: all 0.5s ease-out;
+    }
+
+    #open {
+      font-size: 40px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      text-shadow: 0px 0px 10px magenta;
+      color: magenta;
+
+    }
+
+    #close {
+      font-size: 40px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      text-shadow: 0px 0px 10px magenta;
+      color: white;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    ul li.active {
+      background-color: white;
+    }
+
+    body {
+      padding: 25px;
+      background-color: white;
+      color: black;
+      font-size: 25px;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+      border: white 3px solid;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+      border: yellow 3px solid;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      background-color: rgba(0, 0, 0);
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+      background-color: rgba(0, 0, 0);
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: yellow;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: orangered;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    h1 {
+      font-size: 40px;
+      text-align: center;
+      color: yellow;
+    }
+
+    .footer {
+      border: transparent 4px solid;
+      background-color: transparent;
+      height: 200px;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    #hy img {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      padding: 10px;
+      border: yellow 3px solid;
+    }
+
+    link {
+      border-radius: 50%;
+    }
+
+    .content1 {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .content1 .items {
+      width: 500px;
+      height: 500px;
+      border: yellow 4px solid;
+      color: yellow;
+      text-align: center;
+      font-size: 30px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      color: yellow;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body {
+      background-color: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 20px;
+      height: 10px;
+      border-radius: 30px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #787263;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: yellow;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: yellow;
+    }
+
+    .content2 {
+      height: 350px;
+      border: yellow 5px solid;
+      display: flex;
+    }
+
+    .left {
+      height: 100%;
+      width: 40%;
+    }
+
+    .right {
+      height: 100%;
+      width: 60%;
+      border: yellow 2px solid;
+    }
+
+    .content3 {
+      height: 350px;
+      border: yellow 5px solid;
+      display: flex;
+    }
+
+    #pp {
+      height: 100%;
+    }
+
+    #g {
+      text-decoration: underline yellow;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #divy {
+      color: yellow;
+      font-size: 35px;
+      text-align: center;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #hmu {
+      color: yellow;
+      font-size: 35px;
+      text-align: center;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    p {
+      color: yellow;
+      font-size: 35px;
+      text-align: center;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #a {
+      font-size: 40px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body {
+      background-color: #787263;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #nav {
+      text-align: right;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    #wq{
+      color: yellow;
+      font-size: 50px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+  </style>
+  <link rel="icon" href="DACAD595-B368-44AB-B115-EBB3C2DE47F2.PNG">
+</head>
+
+<body>
+  <h1>Marble and Stone India</h1> <br>
+  <h2 id="r">NOTE : For Best Experience , Use 75% Zoom !</h2> <br>
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="greenm.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="whitem.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="granite.png" style="width:100%">
+    </div>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <br> <br> <br>
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2500); // Change image every 2.5 seconds
+    }
+
+  </script>
+  <div class="content1">
+    <div class="items"><img src="greenm.jpg">Green Marble</div>
+    <div class="items"><img src="whitem.jpg">White Marble</div>
+    <div class="items"><img src="granite.png">Granite Stone</div>
+  </div> <br> <br> <br> <br>
+  <div class="content1">
+    <div class="items"><img src="redg.jpg">Red Granite</div>
+    <div class="items"><img src="kota.jpg">Kota Stone</div>
+    <div class="items"><img src="blackg.jpg">Black Granite</div>
+  </div> <br> <br><br> <br>
+  <div class="content2">
+    <div class="left"><img src="factory.jpg" id="pp"></div>
+    <div class="right">
+      <h1 id="g">Address</h1><br>
+      <p id="hmu">Plot No: A-36/37 , Opposite To Super Bakers , Sardar Estate, Ajwa Road , Vadodara - 390 019 , Gujarat
+      </p> <br>
+      <p id="a">Mobile Number : +919898250204</p>
+    </div>
+  </div>
+  <div class="content3">
+    <div class="right">
+      <h1 id="g">What We Offer</h1> <br>
+      <p id="divy">We at Marble And Stone India Offer the best quality and variety of stones.
+        Marble and Stone is a one stop destination for all your necessities. Kota Stone , Marble and Granite Is what we
+        Offer .
+        Marble and Stone India has the best range of products. With strict quality control process, we ensure that you
+        get the highest quality Stones at the most competitive prices for all your demands. </p>
+    </div>
+    <div class="left"><img src="stack.jpg" id="pp"></div>
+  </div>
+  <div class="content2">
+    <div class="left"><img src="dada.jpg" id="pp"></div>
+    <div class="right">
+      <h1 id="g">About Us</h1> <br>
+      <p id="na">35+ years of experience in the industry and providing quality products to Developers and Retail clients
+        in
+        and around Vadodara. <br><br> "Quality with best prices is what we believe." <br></p>
+      <p id="nav">- Navin Jain</p>
+    </div>
+  </div> <br> <br>
+  <marquee behavior="scroll" direction="left" scrollamount="7" id="wq">⬇ Exact Location ⬇</marquee> <br> <br>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d922.7592906915547!2d73.23269982917257!3d22.314434239757386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fcf833d837c23%3A0x374cf60c2a148747!2sA-36%2F37%2C%20Sheshnarayan%20Society%2C%20Sardar%20Estate%2C%20Sayaji%20Park%20Society%2C%20Vadodara%2C%20Gujarat%20390019%2C%20India!5e0!3m2!1sen!2sae!4v1623156855396!5m2!1sen!2sae"
+    width="1770" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+</body>
+</html>
